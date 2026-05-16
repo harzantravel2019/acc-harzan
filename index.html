@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HARZAN TRAVEL Accounting Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="dashboard">
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <img
+            class="brand-logo"
+            src="harzan-travel-logo.png"
+            alt="HARZAN TRAVEL logo"
+          />
+          <div>
+            <p class="eyebrow">Travel Agency Finance</p>
+            <h1>HARZAN TRAVEL</h1>
+          </div>
+        </div>
+        <p class="sidebar-copy">
+          Manage customers, debts, payments, and automatic invoices across
+          separate accounting pages.
+        </p>
+        <nav class="section-nav">
+          <a href="index.html">Dashboard</a>
+          <a href="customers.html">Customers</a>
+          <a href="debts.html">Debt Entry</a>
+          <a href="payments.html">Payments</a>
+          <a href="invoices.html">Auto Invoice</a>
+        </nav>
+        <div class="sidebar-settings">
+          <button type="button" class="settings-btn" id="settingsToggleBtn">Settings</button>
+          <div class="settings-panel is-hidden" id="settingsPanel">
+            <p class="eyebrow">Theme Mode</p>
+            <div class="theme-option-group">
+              <button type="button" class="theme-choice" data-theme-value="light">
+                Light Mode
+              </button>
+              <button type="button" class="theme-choice" data-theme-value="dark">
+                Dark Mode
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="currency-note">
+          <span>Supported currencies</span>
+          <strong>USD and IQD only</strong>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section class="hero-panel">
+          <div class="hero-copy">
+            <p class="eyebrow">Agency Accounting Dashboard</p>
+            <h2>Track every traveler balance from booking to final payment.</h2>
+            <p>
+              Open each page separately to manage customers, debts, payments,
+              and invoice generation while keeping the same saved accounting
+              data in the browser.
+            </p>
+          </div>
+          <div class="hero-grid">
+            <article class="summary-card">
+              <span>Total Customers</span>
+              <strong id="customerCount">0</strong>
+              <small>Saved customer profiles</small>
+            </article>
+            <article class="summary-card">
+              <span>Outstanding USD</span>
+              <strong id="usdOutstanding">$0.00</strong>
+              <small>Debt minus payments</small>
+            </article>
+            <article class="summary-card">
+              <span>Outstanding IQD</span>
+              <strong id="iqdOutstanding">IQD 0</strong>
+              <small>Debt minus payments</small>
+            </article>
+            <article class="summary-card accent">
+              <span>Customers In Debt</span>
+              <strong id="invoiceCount">0</strong>
+              <small>Current customers with outstanding debt</small>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel dashboard-ledger-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Customer Debt Overview</p>
+              <h3>Each customer outstanding debts</h3>
+            </div>
+            <input
+              id="dashboardDebtSearch"
+              type="search"
+              placeholder="Search by customer name, phone, reference, or note"
+            />
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Phone</th>
+                  <th>Outstanding USD</th>
+                  <th>Outstanding IQD</th>
+                </tr>
+              </thead>
+              <tbody id="dashboardDebtTableBody">
+                <tr>
+                  <td colspan="4" class="empty-state">No customer debt data yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
